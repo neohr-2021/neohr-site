@@ -248,7 +248,7 @@ p{margin:0}
 .result .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
 
 /* testimonials */
-.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.quotes:has(> .quote:only-child){grid-template-columns:minmax(0,640px);justify-content:center}
 @media (max-width:760px){.quotes{grid-template-columns:1fr}}
 .quote{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:18px;align-content:space-between}
 .quote blockquote{margin:0;font-size:1.05rem;line-height:1.55}
@@ -731,13 +731,9 @@ footer .vals{margin-top:12px;font-weight:600}
     <div class="head">
       <div class="eyebrow">Client Success Stories</div>
       <h2>Real People. Real Results.</h2>
-      <p class="lede">In their own words: what coaching clients say about working with Christina.</p>
+      <p class="lede">In their own words: what clients say about working with Christina.</p>
     </div>
     <div class="quotes">
-      <figure class="quote" style="margin:0"><blockquote>Christina completely transformed my job search. My resume went from zero callbacks to 4 interviews in the first week. The offer negotiation coaching alone was worth 3x the investment.</blockquote><figcaption class="who"><span class="av">M</span><div><b>Marcus T.</b><span>Senior Product Manager, Tech Industry</span></div></figcaption></figure>
-      <figure class="quote" style="margin:0"><blockquote>I was terrified to change industries after 8 years. The Career Pivot Blueprint gave me a clear roadmap and the confidence to tell my story. Landed a role I never thought was possible.</blockquote><figcaption class="who"><span class="av">A</span><div><b>Aaliyah R.</b><span>Career Pivoter · Healthcare to Tech</span></div></figcaption></figure>
-      <figure class="quote" style="margin:0"><blockquote>The Leadership Coaching program pushed me in ways I didn't expect. My executive presence, team relationships, and strategic clarity are at an entirely different level now.</blockquote><figcaption class="who"><span class="av">J</span><div><b>James W.</b><span>VP of Operations</span></div></figcaption></figure>
-      <figure class="quote" style="margin:0"><blockquote>As a new grad I had no idea how to navigate the job market. NeoHR's New Grad Launch helped me build a professional brand from scratch. Landed my dream role in 6 weeks.</blockquote><figcaption class="who"><span class="av">P</span><div><b>Priya K.</b><span>New Graduate · Life Sciences</span></div></figcaption></figure>
       <figure class="quote" style="margin:0"><blockquote>Everything looks excellent! I would love to move forward with you touching up my LinkedIn profile and writing a cover letter since your work on my resume has been so great.</blockquote><figcaption class="who"><span class="av">L</span><div><b>L.H.</b><span>Resume client, 2024</span></div></figcaption></figure>
     </div>
   </div>
