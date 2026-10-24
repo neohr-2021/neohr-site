@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /booked.html
+
+Sitemap: https://www.neohrus.com/sitemap.xml
