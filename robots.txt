@@ -2,6 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /booked.html
 Disallow: /resume-checklist.html
+Disallow: /media/
 
 Sitemap: https://www.neohrus.com/sitemap.xml
-Disallow: /media/
