@@ -248,7 +248,7 @@ p{margin:0}
 .result .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
 
 /* testimonials */
-.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.quotes:has(> .quote:only-child){grid-template-columns:minmax(0,640px);justify-content:center}
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.quotes:not(.quotes-3)>.quote:last-child:nth-child(odd):not(:only-child){grid-column:1/-1}.quotes-3{grid-template-columns:repeat(3,minmax(0,1fr))}@media(max-width:860px){.quotes-3{grid-template-columns:1fr}}.quotes:has(> .quote:only-child){grid-template-columns:minmax(0,640px);justify-content:center}
 @media (max-width:760px){.quotes{grid-template-columns:1fr}}
 .quote{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:18px;align-content:space-between}
 .quote blockquote{margin:0;font-size:1.05rem;line-height:1.55}
@@ -476,6 +476,15 @@ footer .vals{margin-top:12px;font-weight:600}
           <p class="result-foot">Executive Operations Manager hired and started within days of the offer.</p>
         </article>
       </div>
+    </div>
+    <div class="head" style="margin-top:56px">
+      <div class="eyebrow">What Hiring Leaders Say</div>
+      <h3>Trusted by the people who hire and the people who get hired</h3>
+    </div>
+    <div class="quotes quotes-3">
+      <figure class="quote" style="margin:0"><blockquote>Christina is an expert in recruiting people in the global pharma industry. She brings integrity and intelligence to her work.</blockquote><figcaption class="who"><span class="av">S</span><div><b>Sherry K.</b><span>HR Consultant, former manager</span></div></figcaption></figure>
+      <figure class="quote" style="margin:0"><blockquote>She worked well as a solitary recruiter with a demanding and aggressive timeline.</blockquote><figcaption class="who"><span class="av">W</span><div><b>William M.</b><span>Former EVP, Global Technical Operations</span></div></figcaption></figure>
+      <figure class="quote" style="margin:0"><blockquote>It was clear that Christina had her client's best interest in mind as she was very transparent, thorough, and selective to ensure it was a strong mutual match.</blockquote><figcaption class="who"><span class="av">B</span><div><b>Brent B.</b><span>Talent Acquisition Leader, placed candidate</span></div></figcaption></figure>
     </div>
     <div class="callout">
       <div><h3>Join the NeoHR Talent Network</h3><p>Join our LinkedIn Talent Network group to be the first to know about new opportunities we're recruiting for. Not actively looking, but open to the right role? Book a free, confidential 15-minute conversation.</p></div>
@@ -735,6 +744,12 @@ footer .vals{margin-top:12px;font-weight:600}
     </div>
     <div class="quotes">
       <figure class="quote" style="margin:0"><blockquote>Everything looks excellent! I would love to move forward with you touching up my LinkedIn profile and writing a cover letter since your work on my resume has been so great.</blockquote><figcaption class="who"><span class="av">L</span><div><b>L.H.</b><span>Resume client, 2024</span></div></figcaption></figure>
+      <figure class="quote" style="margin:0"><blockquote>I recently began a new job search after 30 years at another employer. Christina was able to put my 30 years of experience into a professional and high quality resume. The new resume got me in the door and an interview with a new employer. As of today, I have accepted a job offer!</blockquote><figcaption class="who"><span class="av">D</span><div><b>Daryl C.</b><span>Business Operations Consultant</span></div></figcaption></figure>
+      <figure class="quote" style="margin:0"><blockquote>What really stood out was her ability to translate complex experience into clear, impactful language that gets attention. She was efficient, responsive, and made the entire process straightforward.</blockquote><figcaption class="who"><span class="av">D</span><div><b>Dennis S.</b><span>EHS Director, Life Sciences</span></div></figcaption></figure>
+      <figure class="quote" style="margin:0"><blockquote>Thanks to her skillful writing and creative touch, my LinkedIn profile is now generating significantly more impressions.</blockquote><figcaption class="who"><span class="av">I</span><div><b>Italo I.</b><span>Manager, Network Services</span></div></figcaption></figure>
+      <figure class="quote" style="margin:0"><blockquote>She offered a free career coaching session before I even signed on. She totally transformed my resume. She gets what recruiters are looking for and knows how to make your experience shine.</blockquote><figcaption class="who"><span class="av">J</span><div><b>Jessie L.</b><span>Strategic Communications Professional</span></div></figcaption></figure>
+      <figure class="quote" style="margin:0"><blockquote>Christina has a rare ability to see the big picture while helping you navigate the details with clarity and confidence.</blockquote><figcaption class="who"><span class="av">K</span><div><b>Kymberli S.</b><span>Strategic Operations Executive</span></div></figcaption></figure>
+      <figure class="quote" style="margin:0"><blockquote>Christina was able to provide insight on career development and how to get to the next level of my career. The career transition was smooth.</blockquote><figcaption class="who"><span class="av">T</span><div><b>Trivette V.</b><span>Pharmaceutical Professional</span></div></figcaption></figure>
     </div>
   </div>
 </section>
