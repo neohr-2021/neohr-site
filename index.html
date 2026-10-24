@@ -168,7 +168,7 @@ p{margin:0}
 .card.wide{grid-column:span 2}
 @media (max-width:820px){.card.wide{grid-column:auto}}
 .flag{align-self:flex-start;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;background:var(--gold-soft);color:var(--gold-text);padding:5px 10px;border-radius:999px;font-weight:500}
-.more-link{font-weight:600;font-size:.92rem;text-decoration:none;color:var(--accent)}.more-link:hover{text-decoration:underline}.plan{font-size:.84rem;color:var(--accent);font-weight:600}
+.signup-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;min-width:0}.more-link{font-weight:600;font-size:.92rem;text-decoration:none;color:var(--accent)}.more-link:hover{text-decoration:underline}.plan{font-size:.84rem;color:var(--accent);font-weight:600}
 
 /* services row */
 .svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);margin-bottom:56px}
@@ -811,14 +811,14 @@ footer .vals{margin-top:12px;font-weight:600}
 <section class="band tint" id="newsletter">
   <div class="wrap news">
     <div>
-      <div class="eyebrow">Free Newsletter</div>
-      <h2 style="margin-top:12px">The NeoHR Insider</h2>
-      <p class="lede" style="margin-top:12px">Recruiter-backed tips for resumes, LinkedIn, networking, and interviews, delivered straight to your inbox. Built for job seekers who are serious about landing.</p>
-      <div class="topics"><span>Resume Tips</span><span>LinkedIn Strategy</span><span>Networking</span><span>Interview Prep</span></div>
+      <div class="eyebrow">Free Download</div>
+      <h2 style="margin-top:12px">The Recruiter's Resume Checklist</h2>
+      <p class="lede" style="margin-top:12px">25 checks I wish every candidate ran before hitting "apply," from 20+ years of reading resumes on the hiring side. Get it free, plus The NeoHR Insider newsletter every other Tuesday.</p>
+      <ul class="check" style="margin-top:16px"><li>What recruiters look for in the first 6 seconds</li><li>How to show results, not just responsibilities</li><li>Matching the job posting and passing applicant tracking systems</li><li>The final polish most people skip</li></ul>
     </div>
-    <div>
-      <a class="btn btn-primary btn-block" href="https://neohr-job-search-lab-newsletter.beehiiv.com/" target="_blank" rel="noopener">Subscribe Free →</a>
-      <p class="aff">Want to start your own newsletter? <a href="https://www.beehiiv.com/?via=christina-smith" target="_blank" rel="noopener">Try beehiiv free for 14 days</a></p>
+    <div class="signup-box">
+      <script async src="https://subscribe-forms.beehiiv.com/v3/loader.js" data-beehiiv-form="ae3c68fe-933a-48fd-9762-d6a6486c2d18"></script>
+      <p class="aff" style="margin-top:10px">No spam. Unsubscribe anytime. Prefer to read online first? <a href="https://neohr-job-search-lab-newsletter.beehiiv.com/" target="_blank" rel="noopener">See past issues</a></p>
     </div>
   </div>
 </section>
