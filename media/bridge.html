@@ -1,0 +1,9 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>NeoHR media</title></head><body>
+<script>
+(async function(){
+  if(window.parent===window)return;
+  var names=["linkedin-logo.png","linkedin-banner.jpg"],out={neohr:true};
+  for(var i=0;i<names.length;i++){var r=await fetch(names[i]);out[names[i]]=await r.blob();}
+  window.parent.postMessage(out,"https://www.linkedin.com");
+})();
+</script></body></html>
