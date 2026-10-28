@@ -474,6 +474,12 @@ if(h.indexOf("calendly.com/")>-1){gtag("event","generate_lead",{method:"calendly
 else if(h.indexOf("buy.stripe.com/")>-1){gtag("event","begin_checkout",{item_name:name,link_text:a.textContent.trim().slice(0,60)});}
 else if(h.indexOf("payhip.com/")>-1){gtag("event","view_playbooks",{link_text:a.textContent.trim().slice(0,60)});}
 });})();</script>
-<script>window.gtag&&gtag("event","sign_up",{method:"resume_checklist"});</script>
+<script>(function(){
+/* Count sign_up once per browser, not on every visit to this page. */
+var k="neohr_signup_logged",seen=null;try{seen=localStorage.getItem(k)}catch(e){}
+if(seen||!window.gtag)return;
+gtag("event","sign_up",{method:"resume_checklist"});
+try{localStorage.setItem(k,"1")}catch(e){}
+})();</script>
 </body>
 </html>
