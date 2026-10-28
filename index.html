@@ -88,6 +88,7 @@ p{margin:0}
 
 /* announcement + nav */
 .announce{background:var(--accent);color:var(--accent-ink);font-size:.9rem;text-align:center;padding-block:9px}
+.announce[hidden]{display:none!important}
 .announce a{color:inherit;font-weight:700;text-decoration:underline;text-underline-offset:3px;margin-left:6px}
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--surface);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;gap:24px;min-height:68px;flex-wrap:wrap;padding-block:8px}
@@ -334,7 +335,7 @@ footer .vals{margin-top:12px;font-weight:600}
 @media (max-width:760px){footer .wrap{grid-template-columns:1fr;gap:28px}}
 </style>
 
-<div class="announce"><div class="wrap">Christina is accepting <strong>3 new Career Accelerator clients</strong> this quarter.<a href="https://calendly.com/christina-smith-neohr/free-career-strategy-session" target="_blank" rel="noopener">Claim your spot →</a></div></div>
+<div class="announce" id="default-banner"><div class="wrap">Christina is accepting <strong>3 new Career Accelerator clients</strong> this quarter.<a href="https://calendly.com/christina-smith-neohr/free-career-strategy-session" target="_blank" rel="noopener">Claim your spot →</a></div></div><div class="announce sale-banner" id="sale-fall-sale-2026" data-pct="20" data-starts="2026-10-28T04:00:00Z" data-ends="2026-12-01T05:00:00Z" hidden><div class="wrap">🍂 <strong>Fall Sale: 20% off every service</strong> with code <strong>FALL20</strong> at checkout, through November 30.<a href="#services">Shop services →</a></div></div><script>/* Sale banners: each .sale-banner shows only between data-starts and data-ends; if several are live the highest data-pct wins; the default banner shows when no sale is live. */(function(){try{var now=Date.now(),best=null;document.querySelectorAll(".sale-banner").forEach(function(b){b.hidden=true;if(now>=Date.parse(b.dataset.starts)&&now<Date.parse(b.dataset.ends)&&(!best||+b.dataset.pct>+best.dataset.pct))best=b;});var d=document.getElementById("default-banner");if(best){best.hidden=false;if(d)d.hidden=true;}else if(d){d.hidden=false;}}catch(e){}})();</script>
 
 <header class="nav">
   <div class="wrap">
