@@ -38,7 +38,7 @@ window.__runCh=async(list,from,to,expect)=>{const q0=__counts().queue;for(let i=
  if(document.querySelector('[role=dialog] [data-slate-editor]')){__log.push(i+' STOP: composer already open');break;}
  const sel=await __open({here:true});if(!sel||sel.length!==1||!sel[0].includes(expect)){__log.push(i+' STOP: channels '+sel);break;}
  const f=await __fill(it);if(!f.img||f.linkPreview){__log.push(i+' STOP fill '+JSON.stringify(f));break;}
- const d=await __setDate(it.date,it.time);const s=await __save();
+ let d=await __setDate(it.date,it.time);if(!d||!d.endsWith(it.time)){await __sleep(800);d=await __setDate(it.date,it.time);}if(!d||!d.endsWith(it.time)){__log.push(i+' STOP: date '+d);break;}const s=await __save();
  __log.push(i+' '+it.tag.slice(0,25)+' '+it.date+' '+it.time+' -> '+d+' len:'+f.len+' saved:'+s.closed+' drafts:'+s.drafts+' queue:'+s.queue);
  if(!s.closed||s.queue!==q0){__log.push('STOP: save problem or queue changed');break;}await __sleep(2000);}__log.push('DONE')};
 window.__pick=async(dateStr,time)=>{const dlg=document.querySelector('[role=dialog]');const [y,m,dd]=dateStr.split('-').map(Number);const mon=['January','February','March','April','May','June','July','August','September','October','November','December'][m-1];
