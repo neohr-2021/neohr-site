@@ -41,4 +41,18 @@ window.__runCh=async(list,from,to,expect)=>{const q0=__counts().queue;for(let i=
  const d=await __setDate(it.date,it.time);const s=await __save();
  __log.push(i+' '+it.tag.slice(0,25)+' '+it.date+' '+it.time+' -> '+d+' len:'+f.len+' saved:'+s.closed+' drafts:'+s.drafts+' queue:'+s.queue);
  if(!s.closed||s.queue!==q0){__log.push('STOP: save problem or queue changed');break;}await __sleep(2000);}__log.push('DONE')};
+window.__pick=async(dateStr,time)=>{const dlg=document.querySelector('[role=dialog]');const [y,m,dd]=dateStr.split('-').map(Number);const mon=['January','February','March','April','May','June','July','August','September','October','November','December'][m-1];
+ const lbl=new Date(y,m-1,dd).toLocaleDateString('en-US',{weekday:'long'})+', '+mon+' '+dd;
+ const find=()=>[...document.querySelectorAll('[aria-label]')].find(e=>e.offsetParent&&new RegExp('^'+lbl+'(st|nd|rd|th)?,').test(e.getAttribute('aria-label')||''));
+ let cell=find();if(!cell){const next=[...document.querySelectorAll('button')].find(b=>/next/i.test(b.getAttribute('aria-label')||'')&&b.offsetParent);if(next){__press(next);await __sleep(600);cell=find();}}
+ if(!cell)return 'no cell';__press(cell);await __sleep(600);
+ const inp=[...document.querySelectorAll('input[type=text]')].find(i=>i.offsetParent&&/[AP]M/.test(i.value));
+ inp.focus();inp.select();const set=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value').set;set.call(inp,time);inp.dispatchEvent(new Event('input',{bubbles:true}));inp.dispatchEvent(new Event('change',{bubbles:true}));await __sleep(400);
+ ['keydown','keypress','keyup'].forEach(t=>inp.dispatchEvent(new KeyboardEvent(t,{key:'Enter',code:'Enter',keyCode:13,which:13,bubbles:true})));await __sleep(800);
+ const fb=[...dlg.querySelectorAll('button')].find(x=>/^\s*[A-Z][a-z]{2} \d+, \d/.test(x.textContent));return fb&&fb.textContent.trim();};
+window.__setDate=async(dateStr,time)=>{const dlg=document.querySelector('[role=dialog]');
+ const na=[...dlg.querySelectorAll('button')].find(x=>/Next Available/.test(x.textContent));
+ if(na){__press(na);await __sleep(900);const o=[...document.querySelectorAll('div')].find(e=>e.offsetParent&&e.textContent.trim()==='Set Date and Time');if(!o)return 'no set-date option';__press(o);await __sleep(1000);}
+ else{const btn=[...dlg.querySelectorAll('button')].find(x=>/Set Date and Time|^\s*[A-Z][a-z]{2} \d+, \d/.test(x.textContent));if(!btn)return 'no date btn';__press(btn);await __sleep(900);}
+ return __pick(dateStr,time)};
 'helpers loaded'
